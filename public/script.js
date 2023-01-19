@@ -32,6 +32,7 @@ function senddata() {
         .then(response => response.json())
         .then(data => {
             console.log(data);
+            window.location.href = `/hotel/${hotell_id}?begindate=${begindate.value}&enddate=${enddate.value}`;
         })
         .catch(error => {
             console.error('Error:', error);

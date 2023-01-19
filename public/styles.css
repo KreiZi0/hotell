@@ -130,3 +130,42 @@ select#dropdown-menu {
     text-decoration: none;
     cursor: pointer;
 }
+
+
+form {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+input[type="checkbox"] {
+    /* hide the checkbox itself */
+    display: none;
+}
+
+label {
+    /* style the label text */
+    color: #333;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+input[type="checkbox"] + label::before {
+    /* create a custom checkbox */
+    content: "";
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    vertical-align: middle;
+}
+
+input[type="checkbox"]:checked + label::before {
+    /* change the custom checkbox when checked */
+    content: "✓";
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    font-size: 18px;
+}

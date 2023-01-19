@@ -16,23 +16,35 @@ nav
 html
     head
     body
-        form.registerform(action='/registering', method='POST')
+        form.registerform(action='/hotelregister', method='POST')
             p
                 |
                 input(name='hotelname', value='', type='text', placeholder='Hotell name')
                 |
-                input(name='hotel-address', value='', type='text', placeholder='Address')
+                input(name='hotel_address', value='', type='text', placeholder='Address')
                 |
-                input(name='password', value='', type='password', placeholder='Password')
+                input(name='description', value='', type='text', placeholder='Description')
                 |
                 input(name='email', value='', type='text', placeholder='e-mail')
-                select#dropdown-menu
+                select(for="stars", name="stars", id="dropdown-menu")
                     option(value='empty', disabled) Select how many Stars you have
-                    option(value='star1') 1 Star
-                    option(value='star2') 2 Stars
-                    option(value='star3') 3 Stars
-                    option(value='star4') 4 Stars
-                    option(value='star5') 5 Stars
+                    option(value='1') 1 Star
+                    option(value='2') 2 Stars
+                    option(value='3') 3 Stars
+                    option(value='4') 4 Stars
+                    option(value='5') 5 Stars
+                label Select what services you provide:
+                input#massage(type='checkbox' name='services' value='massage')
+                label(for='massage') Massage
+                input#breakfast(type='checkbox' name='services' value='breakfast')
+                label(for='breakfast') Breakfast
+                input#pool(type='checkbox' name='services' value='pool')
+                label(for='pool') Pool
+                input#beach(type='checkbox' name='services' value='beach')
+                label(for='beach') Beach
+                input#dinner(type='checkbox' name='services' value='dinner')
+                label(for='dinner') Dinner
+
             input(value='Submit', type='submit', class="submit")
 
 
